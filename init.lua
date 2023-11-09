@@ -1,11 +1,8 @@
 require "options"
+
 require "lazy-config"
+require "lspzero"
+require "theme"
 require "fzflua"
 require "treesitter"
-require "lspzero"
-
--- Set colorscheme
-require("catppuccin").setup({
-	flavour = "mocha",
-})
-vim.cmd.colorscheme "catppuccin"
+require "neotree"

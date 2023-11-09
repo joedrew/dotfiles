@@ -1,5 +1,9 @@
 return {
-    { "catppuccin/nvim",                  name = "catppuccin", priority = 1000 },
+    {
+        'maxmx03/solarized.nvim',
+        lazy = false,
+        priority = 1000,
+    },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     {
@@ -62,7 +66,7 @@ return {
         opts = {
             formatters_by_ft = {
                 lua = { "stylua" },
-                python = { "ruff" },
+                python = { "black", "ruff_fix" },
                 javascript = { { "prettierd", "prettier" } },
             },
             format_on_save = { timeout_ms = 500, lsp_fallback = true },
@@ -71,12 +75,27 @@ return {
             -- If you want the formatexpr, here is the place to set it
             vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
         end,
-
-        -- This function is optional, but if you want to customize formatters do it here
-        config = function(_, opts)
-            local util = require("conform.util")
-            util.add_formatter_args(require("conform.formatters.shfmt"), { "-i", "2" })
-            require("conform").setup(opts)
-        end,
-    }
+    },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    },
+    --    {
+    --        "folke/which-key.nvim",
+    --        event = "VeryLazy",
+    --        init = function()
+    --            vim.o.timeout = true
+    --            vim.o.timeoutlen = 300
+    --        end,
+    --        opts = {
+    --            -- your configuration comes here
+    --            -- or leave it empty to use the default settings
+    --            -- refer to the configuration section below
+    --        }
+    --    },
 }

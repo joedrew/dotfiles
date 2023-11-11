@@ -1,25 +1,26 @@
 return {
     {
-        'maxmx03/solarized.nvim',
+        "maxmx03/solarized.nvim",
+        dir = "/Users/joe/src/solarized.nvim",
         lazy = false,
         priority = 1000,
     },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v3.x",
     },
     -- LSP Support
     {
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         dependencies = {
-            { 'hrsh7th/cmp-nvim-lsp' },
-        }
+            { "hrsh7th/cmp-nvim-lsp" },
+        },
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate"
+        build = ":TSUpdate",
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
@@ -28,12 +29,12 @@ return {
         "onsails/lspkind.nvim",
     },
     {
-        "tpope/vim-fugitive"
+        "tpope/vim-fugitive",
     },
     {
-        'hrsh7th/nvim-cmp',
+        "hrsh7th/nvim-cmp",
         dependencies = {
-            { 'L3MON4D3/LuaSnip' }
+            { "L3MON4D3/LuaSnip" },
         },
     },
     {
@@ -43,12 +44,12 @@ return {
         config = function()
             -- calling `setup` is optional for customization
             require("fzf-lua").setup({})
-        end
+        end,
     },
     {
-        'windwp/nvim-autopairs',
+        "windwp/nvim-autopairs",
         event = "InsertEnter",
-        opts = {} -- this is equalent to setup({}) function
+        opts = {}, -- this is equalent to setup({}) function
     },
     {
         "stevearc/conform.nvim",
@@ -86,7 +87,7 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
-        }
+        },
     },
     --    {
     --        "folke/which-key.nvim",

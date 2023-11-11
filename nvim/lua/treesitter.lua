@@ -1,4 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "typescript", "javascript", "swift", "kotlin" },
     auto_install = true,
@@ -6,7 +6,7 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
     },
     indent = {
-        enable = true
+        enable = true,
     },
     textobjects = {
         move = {
@@ -45,8 +45,7 @@ require 'nvim-treesitter.configs'.setup {
             },
             goto_previous = {
                 ["[d"] = "@conditional.outer",
-            }
+            },
         },
     },
-
-}
+})

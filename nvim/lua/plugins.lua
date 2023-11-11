@@ -28,6 +28,9 @@ return {
         "onsails/lspkind.nvim",
     },
     {
+        "tpope/vim-fugitive"
+    },
+    {
         'hrsh7th/nvim-cmp',
         dependencies = {
             { 'L3MON4D3/LuaSnip' }

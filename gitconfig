@@ -1,0 +1,37 @@
+[user]
+    name = Joe Drew
+    email = joe@drew.ca
+[push]
+    default = current
+    autoSetupRemote = true
+[pull]
+    ff = only
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    features = Selenized
+    side-by-side = true
+    hyperlinks = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[init]
+    defaultBranch = main

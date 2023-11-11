@@ -1,7 +1,7 @@
 return {
     {
-        "maxmx03/solarized.nvim",
-        dir = "/Users/joe/src/solarized.nvim",
+        "joedrew/solarized.nvim",
+        branch = "joe/selenize-solarized",
         lazy = false,
         priority = 1000,
     },

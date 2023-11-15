@@ -1,7 +1,6 @@
 return {
     {
-        "joedrew/solarized.nvim",
-        branch = "joe/selenize-solarized",
+        "maxmx03/solarized.nvim",
         lazy = false,
         priority = 1000,
     },

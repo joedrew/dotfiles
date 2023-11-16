@@ -1,6 +1,6 @@
 require('lualine').setup({
     options = {
-        theme = 'solarized',
+        theme = 'gruvbox_dark',
         disabled_filetypes = {
             'NvimTree',
         },

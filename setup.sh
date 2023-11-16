@@ -30,3 +30,9 @@ backup_file $GITCONFIG
 if [ ! -e "$GITCONFIG" ]; then
     ln -s "${CURDIR}/gitconfig" "$GITCONFIG"
 fi
+
+BASH_PROFILE=~/.bash_profile
+backup_file $BASH_PROFILE
+if [ ! -e "$BASH_PROFILE" ]; then
+    ln -s "${CURDIR}/bash_profile" "$BASH_PROFILE"
+fi

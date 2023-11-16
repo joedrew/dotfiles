@@ -1,6 +1,6 @@
-require("solarized").setup({
-    theme = "default",
+require("gruvbox").setup({
+    contrast = "hard",
 })
 
 vim.o.background = "dark" -- or 'light'
-vim.cmd.colorscheme("solarized")
+vim.cmd.colorscheme("gruvbox")

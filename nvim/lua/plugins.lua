@@ -1,6 +1,6 @@
 return {
     {
-        "maxmx03/solarized.nvim",
+        "ellisonleao/gruvbox.nvim",
         lazy = false,
         priority = 1000,
     },

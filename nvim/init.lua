@@ -1,9 +1,9 @@
-require "options"
+require("options")
 
-require "lazy-config"
-require "lspzero"
-require "theme"
-require "fzflua"
-require "treesitter"
-require "neotree"
-require "statusline"
+require("lazy-config")
+require("lspzero")
+require("theme")
+require("fzflua")
+require("treesitter")
+require("neotree")
+require("statusline")

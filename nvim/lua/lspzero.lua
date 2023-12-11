@@ -1,5 +1,5 @@
 local lsp_zero = require("lsp-zero")
-vim.lsp.set_log_level("trace")
+-- vim.lsp.set_log_level("trace")
 
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
@@ -11,11 +11,13 @@ end)
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    ensure_installed = {},
+    ensure_installed = { "eslint", "lua_ls", "bashls", "tsserver", "graphql", "pyright", "terraformls" },
     handlers = {
         lsp_zero.default_setup,
     },
 })
+
+require("lspconfig").eslint.setup({})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.tsx", "*.ts" },

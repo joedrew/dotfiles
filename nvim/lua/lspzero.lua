@@ -1,3 +1,6 @@
+local ih = require("lsp-inlayhints")
+ih.setup()
+
 local lsp_zero = require("lsp-zero")
 vim.lsp.set_log_level("info")
 
@@ -23,7 +26,34 @@ require("mason-lspconfig").setup({
         lsp_zero.default_setup,
         tsserver = function()
             require("lspconfig").tsserver.setup({
+                on_attach = function(client, bufnr)
+                    ih.on_attach(client, bufnr)
+                end,
                 settings = {
+                    typescript = {
+                        inlayHints = {
+                            includeInlayParameterNameHints = "all",
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                            includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayEnumMemberValueHints = true,
+                        },
+                    },
+                    javascript = {
+                        inlayHints = {
+                            includeInlayParameterNameHints = "all",
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                            includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayEnumMemberValueHints = true,
+                        },
+                    },
                     completions = {
                         completeFunctionCalls = true,
                     },

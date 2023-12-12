@@ -1,5 +1,5 @@
 local lsp_zero = require("lsp-zero")
--- vim.lsp.set_log_level("trace")
+vim.lsp.set_log_level("info")
 
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
@@ -9,15 +9,29 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<cr>", { buffer = bufnr })
 end)
 
+lsp_zero.set_sign_icons({
+    error = "✘",
+    warn = "▲",
+    hint = "⚑",
+    info = "»",
+})
+
 require("mason").setup({})
 require("mason-lspconfig").setup({
     ensure_installed = { "eslint", "lua_ls", "bashls", "tsserver", "graphql", "pyright", "terraformls" },
     handlers = {
         lsp_zero.default_setup,
+        tsserver = function()
+            require("lspconfig").tsserver.setup({
+                settings = {
+                    completions = {
+                        completeFunctionCalls = true,
+                    },
+                },
+            })
+        end,
     },
 })
-
-require("lspconfig").eslint.setup({})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.tsx", "*.ts" },
@@ -64,5 +78,14 @@ cmp.setup({
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+    },
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip", option = { show_autosnippets = false } },
     },
 })

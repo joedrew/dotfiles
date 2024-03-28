@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.tsx", "*.ts" },
     callback = function()
         local params = {
-            command = "_typescript.organizeImports",
+            command = "_typescript.sortImports",
             arguments = { vim.api.nvim_buf_get_name(0) },
             title = "",
         }

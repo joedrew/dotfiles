@@ -80,6 +80,7 @@ return {
                 typescript = { "prettier" },
                 javascriptreact = { "prettier" },
                 typescriptreact = { "prettier" },
+                jsonc = { "prettier" },
             },
             format_on_save = { timeout_ms = 500, lsp_fallback = true },
         },

@@ -21,7 +21,7 @@ lsp_zero.set_sign_icons({
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    ensure_installed = { "eslint", "lua_ls", "bashls", "tsserver", "graphql", "pyright", "terraformls" },
+    ensure_installed = { "eslint", "lua_ls", "bashls", "tsserver", "graphql", "pyright", "terraformls", "solargraph" },
     handlers = {
         lsp_zero.default_setup,
         tsserver = function()
@@ -56,6 +56,13 @@ require("mason-lspconfig").setup({
                     },
                     completions = {
                         completeFunctionCalls = true,
+                    },
+                },
+            })
+            require("lspconfig").solargraph.setup({
+                settings = {
+                    initializationOptions = {
+                        formatting = false,
                     },
                 },
             })

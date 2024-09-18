@@ -36,3 +36,9 @@ backup_file $BASH_PROFILE
 if [ ! -e "$BASH_PROFILE" ]; then
     ln -s "${CURDIR}/bash_profile" "$BASH_PROFILE"
 fi
+
+FINICKY_CONF=~/.finicky.js
+backup_file $FINICKY_CONF
+if [ ! -e "$FINICKY_CONF" ]; then
+    ln -s "${CURDIR}/finicky.js" "$FINICKY_CONF"
+fi

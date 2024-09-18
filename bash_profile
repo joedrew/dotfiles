@@ -75,3 +75,14 @@ cdnvm "$PWD" || exit
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/joe/google-cloud-sdk/path.bash.inc' ]; then . '/Users/joe/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/joe/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/joe/google-cloud-sdk/completion.bash.inc'; fi
+
+# Created by `pipx` on 2024-06-26 16:01:44
+export PATH="$PATH:/Users/joe/.local/bin"
+
+eval "$(register-python-argcomplete pipx)"

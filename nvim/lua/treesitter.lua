@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
         "swift",
         "kotlin",
         "ruby",
+        "go"
     },
     auto_install = true,
     highlight = {

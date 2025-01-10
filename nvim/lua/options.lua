@@ -15,7 +15,7 @@ vim.opt.expandtab = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 8
 vim.opt.expandtab = true
 vim.cmd([[
   match errorMsg /\s\+$/

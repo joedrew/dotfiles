@@ -1,14 +1,23 @@
 source ~/.bashrc
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+#export ANDROID_HOME=$HOME/Library/Android/sdk
+#export PATH=$PATH:$ANDROID_HOME/emulator
+#export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export GOPRIVATE=*.indexexchange.com
+export GOPROXY=http://nexus3.indexexchange.com/repository/go-mod-group,https://proxy.golang.org,direct
+export GOSUMDB=off
+export GO111MODULE=on
 
 alias ls='ls -G -p'
 alias vi='nvim'
 set -o vi
 
+export EDITOR=nvim
 export BAT_THEME="gruvbox-dark"
+
+ssh-add --apple-load-keychain 2> /dev/null
+eval $(ssh-agent)
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -23,8 +32,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(rbenv init - bash)"
 
 cdnvm() {
     command cd "$@" || return $?
@@ -71,18 +78,3 @@ cdnvm() {
 
 alias cd='cdnvm'
 cdnvm "$PWD" || exit
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/joe/google-cloud-sdk/path.bash.inc' ]; then . '/Users/joe/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/joe/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/joe/google-cloud-sdk/completion.bash.inc'; fi
-
-# Created by `pipx` on 2024-06-26 16:01:44
-export PATH="$PATH:/Users/joe/.local/bin"
-
-eval "$(register-python-argcomplete pipx)"

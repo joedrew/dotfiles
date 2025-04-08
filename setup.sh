@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -e
-set -x
 
 CURDIR=$(cd $(dirname "$0") && pwd)
 

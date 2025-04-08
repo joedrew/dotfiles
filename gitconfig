@@ -1,13 +1,17 @@
 [user]
     name = Joe Drew
-    email = joe@drew.ca
+    email = joe.drew@indexexchange.com
 [push]
     default = current
     autoSetupRemote = true
 [pull]
     ff = only
+[url "ssh://git@gitlab.indexexchange.com"]
+	insteadof = https://gitlab.indexexchange.com
+
 #[url "git@github.com:"]
 #	insteadOf = https://github.com/
+
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f

@@ -45,6 +45,7 @@ module.exports = {
         finicky.matchDomains(/(.*\.)?prebid\.org/),
         finicky.matchDomains(/(.*\.)?dayforcehcm\.com/),
         finicky.matchDomains(/(.*\.)?mariadb\.com/),
+        finicky.matchDomains(/(.*\.)?dayforcehcm\.page\.link/),
       ],
       browser: "Firefox",
     },

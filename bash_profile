@@ -9,6 +9,11 @@ export GOPROXY=http://nexus3.indexexchange.com/repository/go-mod-group,https://p
 export GOSUMDB=off
 export GO111MODULE=on
 
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+
 alias ls='ls -G -p'
 alias vi='nvim'
 set -o vi

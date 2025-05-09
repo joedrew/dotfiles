@@ -1,6 +1,4 @@
-local ih = require("lsp-inlayhints")
 local vim = vim
-ih.setup()
 
 local lsp_zero = require("lsp-zero")
 vim.lsp.set_log_level("info")
@@ -26,9 +24,6 @@ require("mason-lspconfig").setup({
                 lsp_zero.default_setup,
                 ts_ls = function()
                         require("lspconfig").ts_ls.setup({
-                                on_attach = function(client, bufnr)
-                                        ih.on_attach(client, bufnr)
-                                end,
                                 settings = {
                                         typescript = {
                                                 inlayHints = {

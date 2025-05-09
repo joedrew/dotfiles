@@ -17,7 +17,6 @@ return {
                         "hrsh7th/cmp-nvim-lsp",
                 },
         },
-        { "lvimuser/lsp-inlayhints.nvim" },
         {
                 "nvim-treesitter/nvim-treesitter",
                 build = ":TSUpdate",
